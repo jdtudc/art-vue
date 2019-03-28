@@ -1,0 +1,27 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+$tabsPrefix: "#{$proPrefix}tabs";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.#{$tabsPrefix} { border-bottom: 1px solid $borderColor;
+  .#{$tabsPrefix}-wrap { margin-bottom: -1px;
+    .#{$tabsPrefix}-tab { float: left; display: block; font-size: $sizeNormal; line-height: 30px; color: $mainStrong; white-space: nowrap; padding: 0 14px;  margin-left: 5px; border: 1px solid $borderColor; border-radius: $borderRadius $borderRadius 0 0; background-color: $bg; transition: all $animateTime; cursor: pointer;
+      &:first-child { margin-left: 0;}
+      &:hover, &:active { color: $blue;}
+      &.#{$tabsPrefix}-tab_active { color: $blue; background-color: $white; border-bottom-color: transparent;}
+      &.#{$tabsPrefix}-tab_disabled { cursor: not-allowed; color: $mainWeak; background-color: $bg;
+        &:hover { color: $mainWeak;}
+      }
+    }
+    .#{$tabsPrefix}-extend { float: left; position: relative;
+      .#{$tabsPrefix}-extend-switch { margin-left: 20px; height: 32px;
+        .icon-ellipsis { display: block; width: 10px; height: 100%; background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/page/ellipsis.png") no-repeat center center; background-size: 10px 2px; cursor: pointer;}
+      }
+    }
+  }
+}

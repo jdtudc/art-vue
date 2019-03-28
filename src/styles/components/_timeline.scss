@@ -1,0 +1,41 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-timeline {
+    &-item { position: relative; padding-left: 20px; padding-bottom: 25px;
+        &:before { content: ""; display: block; position: absolute; left: 4.5px; top: 5px; width: 1px; height: 100%; background-color: $borderColor;}
+        &-icon { position: absolute; left: 0; top: 5px; width: 10px; height: 10px; background-color: #fff; border-radius: 50%; border: 1px solid $remark; box-sizing: border-box;}
+        &-cont {}
+        &_error {
+            .art-timeline-item-icon { border: 1px solid $red;}
+        }
+        &_success {
+            .art-timeline-item-icon { border: 1px solid $blue;}
+        }
+    }
+    &:last-child {
+       .art-timeline-item:before { display: none;}
+    }
+    &-changelog {
+        .art-timeline-item {
+            &-cont {
+                &-version { font-size: 20px; font-weight: 400; color: $mainStrong; line-height: 1; margin: 0;}
+                &-date { position: relative; font-size: 0; color: $mainStrong; padding-left: 20px; vertical-align: middle; margin-top: 10px;
+                    i { position: absolute; left: 0; font-size: $sizeNormal;}
+                    span { font-size: $sizeNormal;}
+                }
+                &-change-list { padding-left: 20px; margin-top: 5px;}
+                &-change-item { list-style: circle; font-size: $sizeNormal; color: $main; line-height: 2;
+                    span:first-child { color: $mainStrong;}
+                    a { color: $blue;}
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+/**============================
+ art : 项目前缀
+ art-input ： 组件前缀
+ art-input-icon ：组件内部元素
+ art-input_large：组件本身的不同状体
+==============================*/
+.art-textarea { position: relative; display: block;
+    //size : large
+    &.art-textarea_large {
+        .art-textarea-original { line-height: 20px; padding: 10px 10px; min-height: 40px;}
+    }
+    //small
+    &.art-textarea_small {
+        .art-textarea-original { font-size: 12px; line-height: 18px; padding: 4px 10px; min-height: 26px;}
+    }
+
+    &.art-textarea_disabled {
+        .art-textarea-original { cursor: not-allowed; border-color: $borderColor; box-shadow: none; background-color: $bg; resize: none;}
+    }
+}
+// 原始控件
+.art-textarea-original { display: block; line-height: 20px; max-width: 100%; width: 100%; max-height: 100%; min-height: 32px; padding: 6px 10px; color: $mainStrong; font-size: 14px; background-color: #fff; border: 1px solid $borderColor; border-radius: $borderRadius; transition: border $animateTime; outline: none; box-sizing: border-box;
+    // placeholder颜色
+    &::-webkit-input-placeholder { color: $mainWeak; transition: all $animateTime; }
+    &:-moz-placeholder { color: $mainWeak; transition: all $animateTime; }
+    &::-moz-placeholder { color: $mainWeak; transition: all $animateTime; }
+    &:-ms-input-placeholder { color: $mainWeak; transition: all $animateTime; }
+    //
+    &:focus, &:hover { border-color: $blue; box-shadow: 1px 0 6px rgba($blue, .3); }
+}
+

@@ -1,0 +1,33 @@
+@charset "utf-8";
+/**============================
+
+==============================*/
+// 字体
+//body { font-family: $fontFamily;}
+body { line-height: 1; font-family: Segoe UI, Microsoft Yahei, 微软雅黑, Tahoma, Arial, sans-serif;
+    &.mac { font-family: San Francisco, PingFang SC, Hiragino Sans GB, Segoe UI, Microsoft Yahei, 微软雅黑, Tahoma, Arial, sans-serif; }
+}
+body, header, footer, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, input, button, textarea, p, th, td { margin: 0; padding: 0 }
+ul { list-style: none; }
+a { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; text-decoration: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+input, select { vertical-align: middle; }
+body { font-size: 14px; line-height: 1; }
+div, p, li, a { background-position: top center; background-repeat: no-repeat; }
+.clearfix { display: inline-table; display: block; zoom:1}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+// 文案颜色
+$textPrefix: "#{$proPrefix}text";
+// 标题1 2
+.#{$textPrefix}-title1 { font-size: $sizeLarge; color: $mainStrong; }
+.#{$textPrefix}-title2 { font-size: $sizeMedium; color: $mainStrong; }
+// 侧边导航
+.#{$textPrefix}-nav { font-size: $sizeNormal; color: $main; }
+.#{$textPrefix}-content { font-size: $sizeSmall; color: $main; }
+.#{$textPrefix}-remark { font-size: $sizeSmall; color: $mainWeak; }
+
+
+// 局部滚动条
+.art-inner-scroll-box { position: absolute; display: block; z-index: 10; right: 2px; width: 4px; top: 0; bottom: 0; background-color: transparent;
+    .art-inner-scroll { position: absolute; display: block; left: 0; width: 100%; border-radius: $borderRadius; background-color: $scroll;}
+}

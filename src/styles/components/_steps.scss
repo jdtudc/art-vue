@@ -1,0 +1,64 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-steps { font-size: 0; width: 100%; height: 100%;
+    .art-step { position: relative; font-size: 0; display: inline-block; vertical-align: top;
+        .art-step-line { display: block; position: absolute; background-color: $borderColor; z-index: -1;
+            &:after { content: ""; display: block; background-color: $blue; transition: all $animateTime ease-out;}
+        }
+        .art-step-icon { display: inline-block; vertical-align: top; width: 26px; height: 26px; border: 2px solid $remark; box-sizing: border-box; border-radius: 50%; text-align: center; line-height: 22px; font-size: $sizeNormal; color: $main;}
+        .art-step-content { display: inline-block; background-color: #ffffff; padding: 0 10px;
+            .art-step-title { font-size: $sizeNormal; color: $main; line-height: 26px;}
+            .art-step-desc { font-size: $sizeSmall; color: $main; line-height: 1.5; padding-bottom: 12px;}
+        }
+    }
+    .art-step:last-child {
+        .art-step-line { display: none;}
+    }
+    .art-step_active {
+        .art-step-icon { color: $white; border: 2px solid $blue; background: $blue;}
+        .art-step-content {
+            .art-step-title { color: $mainStrong;}
+        }
+    }
+    .art-step_finish {
+        .art-step-icon { border: 2px solid $blue; background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/steps/finish.png") no-repeat center center; background-size: 12px 9px;}
+        .art-step-content {
+            .art-step-title { color: $main;}
+        }
+    }
+}
+.art-steps_horizontal {
+    .art-step {
+        .art-step-icon {position: absolute; left: 0; top: 0;}
+        .art-step-content { display: inline-block; background-color: transparent; padding-left: 36px;
+            .art-step-title { display: inline-block; background-color: #fff; padding-right: 10px;}
+        }
+        .art-step-line { left: 36px; top: 12px; right: 10px; height: 2px;
+            &:after { width: 0; height: 100%;}
+        }
+    }
+    .art-step_finish {
+        .art-step-line {
+            &:after { width: 100%;}
+        }
+    }
+}
+.art-steps_vertical {
+    .art-step {
+        .art-step-line { left: 12px; top: 31px; bottom: 5px; width: 2px;
+            &:after { width: 100%; height: 0;}
+        }
+    }
+    .art-step_finish {
+        .art-step-line {
+            &:after { height: 100%;}
+        }
+    }
+}

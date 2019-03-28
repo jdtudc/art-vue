@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+$separatorPadding: 0 5px;
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-breadcrumb { font-size: 0;
+    .art-breadcrumb-item { display: inline-block; font-size: $sizeSmall; color: $mainWeak;
+        .art-breadcrumb-item-link { cursor: pointer; transition: color $animateTime; color: $mainWeak;
+            &.art-breadcrumb-item-link_active, &:hover, &:active { color: $main; }
+            &.art-breadcrumb-item-link_active { cursor: auto;}
+            &.art-breadcrumb-item-link_disabled {
+                &:hover { color: $mainWeak; cursor: not-allowed;}
+            }
+        }
+        .art-breadcrumb-item-separator { padding: $separatorPadding; }
+    }
+    .art-breadcrumb-item:last-child {
+        .art-breadcrumb-item-separator { display: none; }
+    }
+}
+

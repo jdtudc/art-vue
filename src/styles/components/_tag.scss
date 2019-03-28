@@ -1,0 +1,18 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-tag { display: inline-block; font-size: 0; border-radius: $borderRadius;
+    &_level1 { background-color: $blue;}
+    &_level2 { background-color: $green;}
+    &_level3 { background-color: $orange;}
+    &_level4 { background-color: $red;}
+    &_level5 { background-color: $mainStrong;}
+    &_level6 { background-color: $remark;}
+    &-cont { display: block; height: 20px; line-height: 20px; white-space: nowrap; color: $white; font-size: $sizeSmall; text-align: center; padding: 0 5px;}
+}

@@ -1,0 +1,93 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+/**================================================================
+
+=================================================================*/
+.art-left-nav { position: relative; height: 100%; width: 100%; min-width: 210px; font-size: 14px; background-color: $bg; padding-top: 18px; min-height: 600px; box-sizing: border-box;
+
+    &.art-left-nav_horizontal { height: 36px; line-height: 36px; font-size: 0; padding-top: 0; min-width: auto; min-height: auto; background-color: transparent;
+        > ul { padding: 0; margin: 0; height: 36px; display: inline-block; vertical-align: middle; white-space: nowrap; }
+        > ul > li { display: inline-block; position: relative; height: 100%; transition: all $animateTime ease; min-width: auto; margin-bottom: 0; overflow: visible;
+            &:after { display: none; content: ""; position: absolute; width: 16px; height: 3px; border-radius: 1.5px; background-color: #0074ff; bottom: -1px; right: 0; left: 0; margin: 0 auto; /*animation: lineIn $time ease;*/
+            }
+
+            &.art-left-nav_active {
+                &:after { display: block; }
+                > a { color: $blue; }
+            }
+            &:hover {
+                > a { color: $blue; }
+            }
+            > a { display: block; position: relative; padding: 0 20px; height: 36px; font-size: 16px; line-height: 36px; color: $main; transition: all $animateTime ease; }
+        }
+    }
+    // 树形结构
+    &.art-left-nav-tree { background-color: #fff; min-width: 210px;
+        li { margin-bottom: 3px;
+            &:last-of-type { margin-bottom: 0; }
+            a { padding-right: 40px; text-overflow: ellipsis; white-space: nowrap; }
+            > a { padding-left: 30px; }
+            > ul > li > a { padding-left: 55px;
+                .art-left-nav-icon { left: 30px; }
+            }
+
+            .art-left-nav-icon { width: 14px; height: 14px; left: 8px; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/leftNav/tree_icon.png); background-position: left bottom; }
+
+            // 当前元素有子元素
+            &.art-left-nav-parent-level {
+                > a:after { display: none; }
+                // 有子元素 展开的状态
+                &.art-left-nav_ext {
+                    > a > .art-left-nav-icon { background-position: left top; }
+                }
+                &.art-left-nav_active {
+                    > a { color: $blue; background: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/leftNav/item_bg.png) no-repeat right top; }
+                }
+            }
+            // 当前元素是最后一级，默认的
+            &.art-left-nav-last-level {
+                .art-left-nav-icon { display: none; }
+            }
+        }
+    }
+
+    ul, li, a { padding: 0; margin: 0; }
+    ul { list-style: none; margin-top: 12px;
+        li { height: 40px; overflow: hidden; margin-bottom: 12px; min-width: 100%;
+            &:last-of-type { margin-bottom: 0; }
+            a {padding-right: 50px;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+            a:hover { color: $mainStrong; }
+
+            .art-left-nav-icon { display: block; position: absolute; left: 28px; top: 0; bottom: 0; margin: auto 0; width: 26px; height: 26px; background-repeat: no-repeat; background-position: left top; }
+
+            &.art-left-nav_active {
+                .art-left-nav-icon { background-position: left bottom; }
+            }
+
+            // 当前元素有子元素
+            &.art-left-nav-parent-level {
+                > a:after { content: ""; width: 7px; height: 4px; position: absolute; right: 30px; top: 0; bottom: 0; margin: auto 0; background: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/leftNav/arrow.png) no-repeat; opacity: .5; transition: all ease $animateTime; transform-origin: center center; transform: rotate(180deg); }
+                > a:hover { color: $mainStrong;
+                    &:after { opacity: 1; }
+                }
+                // 有子元素 展开的状态
+                &.art-left-nav_ext { height: auto;
+                    > a {
+                        &:after { opacity: 1; transform: rotate(0deg); }
+                    }
+                }
+                // 有子元素 选中的状态
+                &.art-left-nav_active {
+                    > a { color: $mainStrong; }
+                }
+            }
+            // 当前元素是最后一级，默认的
+            &.art-left-nav-last-level {
+                &.art-left-nav_active {
+                    > a { color: $blue; background: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/leftNav/item_bg.png) no-repeat right top; }
+                }
+            }
+        }
+    }
+    a { display: block; position: relative; height: 40px; padding-left: 65px; line-height: 40px; color: $main; text-decoration: none; box-sizing: border-box; }
+}

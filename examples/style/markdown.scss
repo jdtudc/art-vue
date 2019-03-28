@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+@import "../../src/styles/common/var";
+
+.art-markdown section {
+  & > img{vertical-align:middle;}
+  & > h1, & > h2, & > h3, & > h4 { line-height:1; color: $mainStrong; font-weight: normal;}
+  & > h2{ font-size:30px;}
+  & > h3 { font-size: 18px; margin-top: 40px;}
+  & > h4 { font-size: 14px; margin-top: 20px;}
+  & > hr{ height: 120px; border:0; margin: 0;}
+  & > p { line-height:1; color: $main; margin-top: 20px;
+    a { color: $blue;}
+  }
+  code{ width: 100%; border:1px solid $borderColor; border-radius: $borderRadius; background-color: $bg; font-family: Segoe UI, Microsoft Yahei, 微软雅黑, Tahoma, Arial, sans-serif; padding: 0.1em 0.3em; margin: 0 1px;}
+  pre{ background-color:transparent; overflow: hidden; font-family: Segoe UI, Microsoft Yahei, 微软雅黑, Tahoma, Arial, sans-serif;}
+  pre code{ padding:0; font-size:$sizeNormal; border:none; border-radius:0; background-color:transparent; line-height: 1.7;  overflow-x: auto; vertical-align:middle;}
+  blockquote{ margin:16px 0; padding:0 15px; color:#C9C9C9; border-left:4px solid #ECECEC;}
+  blockquote p{ color:$main; line-height: 1.5;}
+  & > ul{ margin:16px 0; padding-left:24px; list-style:disc;}
+  & > ul li{ line-height:2; color: $main;}
+  & > table{ border-collapse: collapse; border-spacing: 0; empty-cells: show; border: 1px solid $borderColor;}
+  & > table.table{ width:100%; color: $main; font-size: $sizeNormal; overflow-x:auto; overflow-y: hidden; -webkit-overflow-scrolling:touch; margin-top: 20px; line-height: 1.5;}
+  & > table.table tr { width: 100%;}
+  & > table.table th{ text-align:left; border-top:1px solid #f3f7fa; background-color: $bg;}
+  & > table.table td, & > table.table th{ border:1px solid $borderColor; padding: 12px 24px;}
+  & > table.table td { line-height: 2; min-width: 10em;
+    a { color: $blue;}
+  }
+}
+
+
+.art-wiki section {
+  & > hr { height: 60px;}
+  & > ul + hr  { height: 44px;}
+  & > p { line-height: 2;}
+  & > h2:first-child { margin-top: 0;}
+  a { color: $blue;}
+  .art-wiki-code { margin-top: 20px; border: 1px solid $borderColor; border-radius: 4px; padding: 15px 30px; color: $main;
+    hr { height: 0;}
+  }
+  ul {
+    li { list-style: circle;}
+  }
+}
+
+.art-design-wiki section {
+  & > hr { height: 15 * $base;}
+  & > h2 { font-size: 3.5 * $base; line-height: 5 * $base; color: $mainStrong;}
+  & > h3 { font-size: $sizeLarge; line-height: 3 * $base; margin-top: 7 * $base; color: $mainStrong; font-weight: bold;}
+  & > h4 { font-size: $sizeNormal; line-height: 3 * $base; color: $mainStrong; margin-top: 5 * $base; font-weight: bold;}
+  & > h5 { font-size: $sizeNormal; line-height: 3 * $base; color: $mainStrong; margin-top: 3 * $base; font-weight: normal;}
+  & > p { font-size: $sizeNormal; line-height: 3 * $base; color: $main; margin-top: $base;}
+  & > img { margin-top: 4 * $base;}
+  & > .remark { color: $mainWeak; margin-top: $base;}
+  & > h2 + p { margin-top: 0.75 * $base;}
+  & > h3 + p { margin-top: $base;}
+  & > h3 + h5 { margin-top: 4 * $base; line-height: 2.5 * $base;}
+  & > h3 + .compare-list { margin-top: 3 * $base;}
+  & > p + img { margin-top: 4 * $base;}
+  & > p + p { margin-top: 0;}
+  & > .compare-list + h3 { margin-top: 5 * $base;}
+  .mt-l { margin-top: 10 * $base;}
+  .tips { position: relative; font-size: $sizeNormal; line-height: 2 * $base; margin-top: 3 * $base; color: $main;
+    strong { font-weight: normal; color: $mainStrong;}
+    a { font-size: $sizeNormal; color: $blue;}
+    &.nowrap { white-space: nowrap;}
+    &.badge { padding-left: 1.5 * $base;
+      &:before { content: ""; position: absolute; left: 0; top: 0.375 * $base; width: 0.5 * $base; height: 1.25 * $base;}
+      &.correct {
+        &:before {background-color: $green;}
+      }
+      &.error {
+        &:before { background-color: $red;}
+      }
+    }
+  }
+  .img-list { font-size: 0; margin-top: 4 * $base;
+    .img-box { display: inline-block; margin-left: 10 * $base; vertical-align: top;
+      &.mgl-l { margin-left: 16 * $base;}
+      &:first-child { margin-left: 0;}
+      .tips { font-size: $sizeSmall;}
+    }
+  }
+  .shadow { box-shadow: 0 0.75 * $base 3 * $base 0 $shadow;}
+  .compare-list { border: 1px solid $borderColor; font-size: 0; margin-top: 4 * $base;
+    .compare-item { border-top: 1px solid $borderColor; padding: 4 * $base 0;
+      &:first-child { border-top: none;}
+    }
+    .compare-box { display: inline-block; padding: 0 4 * $base; vertical-align: top;
+      &.pct50 { width: 50%;}
+      &.pct25 { width: 25%;}
+      .mlt-s { margin-top: 2.5 * $base; }
+      .tips {
+        &:first-child { margin-top: 0;}
+      }
+    }
+  }
+}

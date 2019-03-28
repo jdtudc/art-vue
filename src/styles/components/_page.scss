@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-page {
+  .art-page-list { width: 100%; height: 28px;
+    .art-page-prev, .art-page-prev-fast, .art-page-item, .art-page-next, .art-page-next-fast { position: relative; display: inline-block; margin-left: 10px; height: 100%; cursor: pointer; vertical-align: middle;
+      &_disabled { cursor: not-allowed;}
+    }
+    .art-page-prev-fast, .art-page-next-fast { width: 10px; background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/page/ellipsis.png") no-repeat center center; background-size: 10px 2px;}
+    .art-page-prev, .art-page-item, .art-page-next { width: 28px; border-radius: 50%; background-color: $white; box-shadow: 0 2px 6px 0 rgba(0,0,0,0.05);}
+    .art-page-prev, .art-page-next {
+      &:after { content: ""; position: absolute; left: 50%; top: 50%; margin-left: -2.5px; margin-top: -4px; width: 5px; height: 8px; background-image: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/page/arrow.png"); background-repeat: no-repeat; background-position: center center;}
+      &:hover {
+        &:after { background-image: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/page/arrow_active.png");}
+      }
+      &_disabled {
+        &:after { background-image: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/page/arrow_disabled.png");}
+        &:hover {
+          &:after { background-image: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/page/arrow_disabled.png");}
+        }
+      }
+    }
+    .art-page-prev {
+      &:after { transform: rotate(180deg);}
+    }
+    .art-page-prev-fast, .art-page-next-fast {
+      &:before, &:after { content: ''; display: none; position: absolute; top: 11.5px; width: 5px; height: 5px; box-sizing: border-box; border-color: $blue $blue transparent transparent; border-width: 1px 1px 0 0; border-style: solid; transform-origin: 50% 50%;}
+      &:hover { background: none;
+        &:before, &:after { display: block;}
+      }
+    }
+    .art-page-prev-fast {
+      &:before { right: -1px;}
+      &:after { right: 3px;}
+      &:before, &:after { transform: rotate(225deg);}
+    }
+    .art-page-next-fast {
+      &:before, &:after { transform: rotate(45deg);}
+      &:before { left: -1px;}
+      &:after { left: 3px;}
+    }
+    .art-page-item { font-size: $sizeSmall; font-weight: normal; color: $main; text-align: center; line-height: 28px; transition: color $animateTime ease-out;
+      &:hover, &_active { color: $blue; font-weight: bolder;}
+    }
+  }
+}

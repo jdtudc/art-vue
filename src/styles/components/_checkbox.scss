@@ -1,0 +1,45 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+$checkboxPrefix: "#{$proPrefix}checkbox";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状态
+==============================*/
+.#{$checkboxPrefix} { position: relative; font-size: 0; display: block; cursor: pointer;
+    &.#{$checkboxPrefix}_noval {
+        .#{$checkboxPrefix}-icon, .#{$checkboxPrefix}-value { margin-right: 0; }
+    }
+    .#{$checkboxPrefix}-icon { position: relative; display: inline-block; width: 14px; height: 14px; border-radius: $borderRadius; margin-right: 10px; font-size: $sizeNormal; vertical-align: middle; border: 1px solid $remark; box-sizing: border-box; transition: all $animateTime;
+        &:before { content: ""; display: none; position: absolute; left: 50%; top: 50%; width: 8px; height: 2px; margin-left: -4px; margin-top: -1px; background-color: $white; transition: all $animateTime;}
+        &:after { content: ''; display: none; position: absolute; left: 50%; top: 50%; width: 10px; height: 8px; margin-left: -5px; margin-top: -4px; background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/checkbox/active.png") no-repeat center center; background-size: 10px 8px; border: 0 solid $blue; transition: all $animateTime; }
+    }
+    .#{$checkboxPrefix}-value { display: inline-block; font-size: $sizeNormal; color: $main; vertical-align: middle; margin-right: 10px; }
+    &:hover {
+        .#{$checkboxPrefix}-icon { border: 1px solid $blue; }
+    }
+    &_active {
+        .#{$checkboxPrefix}-icon { border: 1px solid $blue; background-color: $blue;
+            &:after { display: block; }
+        }
+        .#{$checkboxPrefix}-value { color: $mainStrong; }
+    }
+    &_disabled { cursor: not-allowed;
+        .#{$checkboxPrefix}-icon { border: 1px solid $remark; background-color: $borderColor; }
+        &:hover {
+            .#{$checkboxPrefix}-icon { border: 1px solid $remark; background-color: $borderColor; }
+        }
+        .#{$checkboxPrefix}-value { color: $mainWeak;}
+    }
+    &.#{$checkboxPrefix}_disabled.#{$checkboxPrefix}_active {
+        .#{$checkboxPrefix}-icon { border: 1px solid $remark; background-color: $remark;}
+    }
+    &.#{$checkboxPrefix}_partial.#{$checkboxPrefix}_active {
+        .#{$checkboxPrefix}-icon { border: 1px solid $blue; background-color: $blue;
+            &:before { display: block;}
+            &:after { display: none;}
+        }
+    }
+}

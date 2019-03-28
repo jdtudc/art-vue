@@ -1,0 +1,13 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-pagination {
+  .art-page-size { float: right;}
+  .art-page { float: right;}
+}

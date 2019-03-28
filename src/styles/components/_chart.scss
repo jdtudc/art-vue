@@ -1,0 +1,120 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-chart { position: relative; min-height: 220px;
+  .art-auxi { background-color: #ffffff;}
+  &_pie1 { position: relative;
+    &-center-text { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      p { font-size: 12px; line-height: 16px; text-align: center; color: $mainWeak; max-width: 4em; }
+    }
+    &-legend { position: absolute; left: 255px; top: 32px;
+      p { position: relative; color: $main; font-size: 12px; padding-left: 22px; line-height: 12px; margin-top: 23px; white-space: nowrap;
+        i { position: absolute; display: block; left: 0; top: 50%; margin-top: -2px; width: 10px; height: 4px; border-radius: $borderRadius;}
+        strong { margin-left: 12px;}
+        &:nth-child(1) { margin-top: 0;}
+      }
+      p:nth-child(1) i { background-color: $blue;}
+      p:nth-child(2) i { background-color: $pink;}
+      p:nth-child(3) i { background-color: $main;}
+    }
+    &-canvas {}
+  }
+  &_bar1, &_bar2, &_bar5 { position: relative; width: 100%; height: 100%;
+    &-canvas { display: block; width: 100%; height: 100%; min-height: 220px;}
+    &-tooltip { position: relative; background-color: rgba(40,48,57,0.9); border-radius: 2px; top: -2px;
+      &:before { content: ""; position: absolute; left: 50%; margin-left: -4px; top: 100%; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid rgba(40,48,57,0.9);}
+      p { text-align: center; color: #fff; font-size: $sizeSmall; line-height: 22px; padding: 0 10px;}
+      ul {
+        li { position: relative; margin-top: 8px; padding-left: 16px; white-space: nowrap;
+          i { position: absolute; left: 0; top: 50%; margin-top: -2px; width: 10px; height: 4px; display: block; border-radius: 2px;}
+        }
+      }
+    }
+  }
+  &_bar3, &_bar4, &_line1, &_line2, &_line3, &_line4 { position: relative; width: 100%; height: 100%;
+    &-canvas { display: block; width: 100%; height: 100%; min-height: 220px;}
+    &-tooltip { position: relative; line-height: 1; padding: 15px; box-shadow: 0 4px 6px rgba(50,60,71,0.4); border-radius: 2px;
+      &:before { content: ""; display: none; position: absolute; left: 50%; margin-left: -4px; top: 100%; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid rgba(40,48,57,0.9);}
+      h6 { font-size: 12px; font-weight: normal;}
+      ul {
+        li { position: relative; margin-top: 8px; padding-left: 16px; white-space: nowrap;
+          i { position: absolute; left: 0; top: 50%; margin-top: -2px; width: 10px; height: 4px; display: block; border-radius: 2px;}
+        }
+      }
+    }
+  }
+  &_pie2 { position: relative; width: 200px; height: 100%;
+    &-canvas { display: block; width: 100%; height: 100%; min-height: 220px;}
+    &-legend { position: absolute; left: 0; top: 50%; width: 200px; height: 200px; transform: translate(0, -50%);
+      p:nth-child(1) { text-align: center; font-size: $sizeSmall; color: $mainWeak; margin-top: 76px;}
+      p:nth-child(2) { text-align: center; font-size: 24px; color: $main; margin-top: 6px;}
+    }
+    &-result { position: absolute; left: 260px; top: 30px;
+      ul {
+        li { position: relative; font-size: 0; line-height: 32px; padding-left: 20px; white-space: nowrap;
+          i { content: ""; position: absolute; display: block; left: 0; top: 50%; width: 10px; height: 4px; margin-top: -2px; border-radius: $borderRadius;}
+          span { display: inline-block; margin-left: 8px; font-size: $sizeSmall; vertical-align: middle;}
+          span:first-child { margin-left: 0;}
+          a { display: inline-block; margin-left: 10px; color: $blue; font-size: $sizeSmall; }
+        }
+      }
+    }
+  }
+  &_radar1 { position: relative; width: 320px; height: 100%;
+    &-canvas { display: block; width: 100%; height: 100%; min-height: 260px;}
+    &-result { position: absolute; left: 340px; top: 36px;
+      ul {
+        li { font-size: 0; position: relative; margin-top: 26px; padding-left: 20px;
+          &:before { content: ""; position: absolute; display: block; left: 0; top: 6px; width: 10px; height: 4px; border-radius: $borderRadius;}
+          p { display: inline-block; vertical-align: middle; white-space: nowrap;}
+          p:nth-child(1) { font-size: $sizeSmall; color: $main; line-height: 16px;}
+          p:nth-child(2) { font-size: 48px; margin-top: 12px;}
+        }
+        li:first-child { margin-top: 0;}
+      }
+      li:nth-child(1) {
+        &:before { background-color: $blue;}
+        p:nth-child(2) { color: $blue;}
+      }
+      li:nth-child(2) {
+        &:before { background-color: $green;}
+        p:nth-child(2) { color: $green;}
+      }
+    }
+  }
+  &_map1, &_map2 { position: relative; width: 100%; height: 100%;
+    &-canvas { display: block; width: 100%; min-height: 220px;}
+    &-result { position: absolute; left: 260px; top: 30px;
+      ul {
+        li { position: relative; font-size: 0; white-space: nowrap; margin-top: 10px;
+          &:first-child { margin-top: 0;}
+          span { display: inline-block; font-size: $sizeSmall; line-height: 1.5; vertical-align: middle;}
+          span:nth-child(1) { width: 18px; height: 18px; border-radius: 50%; background-color: $darkBg; color: $main; text-align: center;}
+          span:nth-child(2) { color: $main; margin-left: 30px;}
+          span:nth-child(3) { margin-left: 30px; font-weight: bold; color: $main;}
+        }
+        li:nth-child(1), li:nth-child(2), li:nth-child(3) {
+          span:nth-child(1) { background-color: $grayBlue; color: $white;}
+          span:nth-child(2), span:nth-child(3) { color: $mainStrong;}
+        }
+      }
+    }
+  }
+  &_line4 {
+    &-legend {
+      ul { font-size: 0; margin-bottom: 24px;
+        li { position: relative; display: inline-block; padding-left: 20px; margin-left: 50px;
+          &:first-child { margin-left: 0;}
+          i { content: ""; position: absolute; display: block; left: 0; top: 6px; width: 10px; height: 4px; border-radius: $borderRadius;}
+          span { color: $main; font-size: $sizeSmall; line-height: 17px;}
+        }
+      }
+    }
+  }
+}

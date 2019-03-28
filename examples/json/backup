@@ -1,0 +1,78 @@
+{
+  "componentData": [
+    {"name": "综述", "endnote": "Summary", "path": "/components/summary"},
+    {"name": "更新日志", "endnote": "ChangeLog", "path": "/components/changelog"},
+    {"id": "1", "name": "Basic", "endnote": "01", "path": "/components/basic", "subNavData": [
+      {"id": "1001", "name": "Color 色彩", "path": "/components/basic#color"},
+      {"id": "1002","name": "Font 字体", "path": "/components/basic#font"},
+      {"id": "1003","name": "Button 按钮", "path": "/components/basic#button"},
+      {"id": "1004","name": "Icon 图标", "path": "/components/basic#icon"},
+      {"id": "1005","name": "Layout 布局", "path": "/components/basic#layout"}
+    ]},
+    {"id": "2", "name": "Form", "endnote": "02", "path": "/components/form", "subNavData": [
+      {"id": "2001", "name": "Input 输入框", "path": "/components/form#input"},
+      {"id": "2002", "name": "Textarea 多行输入框", "path": "/components/form#textarea"},
+      {"id": "2003","name": "Radio 单选框", "path": "/components/form#radio"},
+      {"id": "2004","name": "Checkbox 多选框", "path": "/components/form#checkbox"},
+      {"id": "2005","name": "Switch 开关", "path": "/components/form#switch"},
+      {"id": "2006","name": "Countdown 倒计时", "path": "/components/form#countdown"},
+      {"id": "2007","name": "Table 表格", "path": "/components/form#table"},
+      {"id": "2008","name": "Select 选择器", "path": "/components/form#select"},
+      {"id": "2009","name": "Dropdown 下拉框", "path": "/components/form#dropdown"},
+      {"id": "2010","name": "DatePicker 日期选择器", "path": "/components/form#datePicker"},
+      {"id": "2011","name": "Slider 滑动条", "path": "/components/form#slider"}
+    ]},
+    {"id": "3", "name": "View", "endnote": "03", "path": "/components/view", "subNavData": [
+      {"id": "3001", "name": "Alert 警告提示", "path": "/components/view#alert"},
+      {"id": "3002","name": "Card 卡片", "path": "/components/view#card"},
+      {"id": "3003","name": "Modal 对话框", "path": "/components/view#modal"},
+      {"id": "3004","name": "Badge 徽标数", "path": "/components/view#badge"},
+      {"id": "3005","name": "Tag 标签", "path": "/components/view#tag"},
+      {"id": "3006","name": "Tooltip 文字提示", "path": "/components/view#tooltip"},
+      {"id": "3007","name": "Tree 树形控件", "path": "/components/view#tree"}
+    ]},
+    {"id": "4", "name": "Navigation", "endnote": "04", "path": "/components/navigation", "subNavData": [
+      {"id": "4001", "name": "Menu 导航菜单", "path": "/components/navigation#menu"},
+      {"id": "4002","name": "Tabs 标签页", "path": "/components/navigation#tabs"},
+      {"id": "4003","name": "Page 分页", "path": "/components/navigation#page"},
+      {"id": "4004","name": "Breadcrumb 面包屑", "path": "/components/navigation#breadcrumb"},
+      {"id": "4005","name": "Steps 步骤条", "path": "/components/navigation#steps"},
+      {"id": "4006","name": "Timeline 时间轴", "path": "/components/navigation#timeline"}
+    ]},
+    {"id": "5", "name": "Chart", "endnote": "05", "path": "/components/chart", "subNavData": [
+      {"id": "5001", "name": "性别占比环形图", "path": "/components/chart#sexRingChart"},
+      {"id": "5002", "name": "柱状图", "path": "/components/chart#barChart"},
+      {"id": "5003", "name": "饼图", "path": "/components/chart#pieChart"},
+      {"id": "5004", "name": "雷达图", "path": "/components/chart#radarChart"},
+      {"id": "5005", "name": "折线图", "path": "/components/chart#lineChart"},
+      {"id": "5006", "name": "中国地图", "path": "/components/chart#mapChart"}
+    ]},
+    {"id": "6", "name": "Other", "endnote": "06", "path": "/components/other", "subNavData": [
+      {"id": "6001", "name": "BackTop 返回顶部", "path": "/components/other#backtop"},
+      {"id": "6002","name": "Auxi 辅助", "path": "/components/other#auxi"},
+      {"id": "6003","name": "LoadingBar 加载进度", "path": "/components/other#loadingBar"}
+    ]}
+  ],
+  "designData": [
+    {"name": "理念介绍", "endnote": "Concept", "path": "/design/concept", "subNavData": [
+      {"id": "1001", "name": "自然高效", "path": "/design/concept#efficient"},
+      {"id": "1002", "name": "优雅科学", "path": "/design/concept#scientific"}
+    ]},
+    {"name": "设计原则", "endnote": "Principle", "path": "/design/principle", "subNavData": [
+      {"id": "2001", "name": "接近原则", "path": "/design/principle#close"},
+      {"id": "2002", "name": "对齐原则", "path": "/design/principle#align"},
+      {"id": "2003", "name": "对比原则", "path": "/design/principle#compare"},
+      {"id": "2004", "name": "相似原则", "path": "/design/principle#similar"},
+      {"id": "2005", "name": "截断原则", "path": "/design/principle#truncated"},
+      {"id": "2006", "name": "防错原则", "path": "/design/principle#prevent"},
+      {"id": "2007", "name": "及时反馈", "path": "/design/principle#feedback"},
+      {"id": "2008", "name": "希克定律", "path": "/design/principle#hick"}
+    ]},
+    {"name": "设计基础", "endnote": "Basic", "path": "/design/basic", "subNavData": [
+      {"id": "3001", "name": "色彩", "path": "/design/basic#color"},
+      {"id": "3002", "name": "字体", "path": "/design/basic#font"},
+      {"id": "3003", "name": "字体排版", "path": "/design/basic#typesetting"},
+      {"id": "3004", "name": "文案", "path": "/design/basic#copywriting"}
+    ]}
+  ]
+}

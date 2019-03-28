@@ -1,0 +1,66 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+$buttonPrefix: "#{$proPrefix}button";
+$btnBorderHover: #f6f8fc;
+$btnBorderActive: #f6f8fc;
+/**============================
+ art : 项目前缀
+ art-input ： 组件前缀
+ art-input-icon ：组件内部元素
+ art-input_large：组件本身的不同状状态
+==============================*/
+.#{$buttonPrefix} { color: #fff; background-color: $blue; height: 32px; line-height: 30px; padding: 0 15px; border: 1px solid $blue; border-radius: $borderRadius; outline: none; box-sizing: border-box; transition: all $animateTime; cursor: pointer; box-shadow: 0 2px 5px rgba($blue, .3); font-size: 0;
+
+    // 三种状态 悬浮、激活和禁用状态
+    &:hover { background-color: $blueDark; }
+    &:active { background-color: $blueDark; box-shadow: 0 0 15px rgba(#000, .1) inset; }
+    &:disabled { cursor: not-allowed; background-color: $blueDisabled; border-color: $blueDisabled; box-shadow: none; }
+
+    // 五种样式 ，默认蓝底白字，带框黑字、无框黑字、+白框白字透明底 + 蓝框蓝字
+    //灰框黑字
+    &.#{$buttonPrefix}_minor { color: $mainStrong; background-color: #fff; box-shadow: none; border-color: $borderColor;
+        &:hover { background-color: $btnBorderHover; }
+        &:active { background-color: $btnBorderHover; box-shadow: 0 0 15px rgba(#000, .05) inset; }
+        &:disabled { color: $mainWeak; background-color: $btnBorderHover; border: none; }
+    }
+    // 蓝框蓝字
+    &.#{$buttonPrefix}_text { color: $main; background-color: transparent; border-color: transparent; box-shadow: none;
+        &:hover { color: $mainStrong; background-color: transparent; }
+        &:active { color: $main; background-color: transparent; box-shadow: none; }
+        &:disabled { color: $mainWeak; background-color: transparent; }
+    }
+    // 白框白字透明底
+    &.#{$buttonPrefix}_empty { color: #fff; background-color: transparent; border-color: #fff; box-shadow: none;
+        &:hover { background-color: transparent; }
+        &:active { background-color: transparent; box-shadow: none; }
+        &:disabled { background-color: transparent; }
+    }
+    // 蓝框蓝字
+    &.#{$buttonPrefix}_blue { color: $blue; background-color: transparent; border-color: $blue; box-shadow: none;
+        &:hover { background-color: $blue; color: #fff; box-shadow: 0 3px 10px 0 rgba($blue, .3); }
+        &:active { background-color: $blue; color: #fff; box-shadow: 0 0 15px rgba(#000, .1) inset; }
+        &:disabled { color: $mainWeak; background-color: $btnBorderHover; border-color: $btnBorderHover; box-shadow: none; }
+    }
+    // 无边框
+    &.#{$buttonPrefix}_nobor { border-width: 0; }
+    // 红色按钮
+    &.#{$buttonPrefix}_red { color: #fff; background-color: $red; border-color: $red; box-shadow: 0 2px 5px rgba($red, .3);
+        &:hover { background-color: $redDark; }
+        &:active { background-color: $redDark; box-shadow: 0 0 15px rgba(#000, .1) inset; }
+        &:disabled { cursor: not-allowed; background-color: $redDisabled; border-color: $redDisabled; box-shadow: none; }
+    }
+
+    // 大小尺寸
+    &.#{$buttonPrefix}_large { height: 40px; line-height: 38px; padding: 0 25px;
+        .#{$buttonPrefix}-text { font-size: 16px; }
+    }
+    &.#{$buttonPrefix}_small { height: 26px; line-height: 24px; padding: 0 10px;
+        .#{$buttonPrefix}-text { font-size: 12px; }
+    }
+
+    /**============================
+    子元素
+    ==============================*/
+    .#{$buttonPrefix}-text { font-size: 14px; vertical-align: middle; white-space: nowrap; }
+    .#{$buttonPrefix}-icon { vertical-align: middle; margin-right: 10px; }
+}

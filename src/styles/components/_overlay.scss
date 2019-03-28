@@ -1,0 +1,13 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+$overlayPrefix: "#{$proPrefix}overlay";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-overlay { position: fixed; left: 0; top: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5);
+  &.art-overlay_transparent { background-color: rgba(0,0,0,0);}
+}

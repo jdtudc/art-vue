@@ -1,0 +1,124 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+@import "../animation/_calendar.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-calendar { /*width: 210px;*/
+    height: 32px; position: relative; color: $main; font-size: 12px; z-index: 10;
+    // 时间范围类型
+    &.art-calendar_range { /*width: 520px;*/
+        .art-cal-cont { /*width: 420px; */
+            background-color: #fff; }
+        .art-cal-main-box { width: 420px; }
+        // 已经选中了一个日期
+        &.art-calendar_one {
+            .art-cal-cont {
+                .art-cal-main-cont {
+                    .art-cal-days {
+                        li:hover { background-color: $blue; color: #fff;
+                            &.cur {
+                                &:after { background-color: #fff; }
+                            }
+                        }
+                        li.dark { color: $mainWeak;
+                            &:hover { background-color: transparent; }
+                        }
+                        li.dis { color: $mainWeak; background-color: $bg; cursor: not-allowed;
+                            &:before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; right: -4px; background-color: $bg; z-index: -1; }
+                            &:hover { background-color: $bg; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ul { list-style: none; }
+
+    // 文本框或标签
+    .art-cal-header {
+        .art-input { width: 100%;
+            .art-input-original {cursor: pointer;}
+            .art-input-icon { right: 4px; }
+        }
+        .art-cal-result { position: absolute; display: block; right: 0; line-height: 32px; padding-right: 26px; text-align: right; font-size: $sizeSmall; color: $main; cursor: pointer;
+            &:after { content: ""; position: absolute; top: 0; right: 0; width: 26px; height: 32px; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/calendar/s-arr.png); background-repeat: no-repeat; background-position: center center; transform: rotate(270deg); transition: all $animateTime; }
+            &_open {
+                &:after { transform: rotate(450deg); }
+            }
+            p { line-height: 32px; white-space: nowrap;}
+        }
+    }
+    .art-cal-cont { position: absolute; left: 0; top: 42px; transform-origin: 50% 0; box-shadow: 0 2px 14px 0 rgba(#323c47, 0.15); background-color: #fff;
+        &.art-right { left: auto; right: 0; }
+        // 左侧快捷导航
+        .art-cal-quick-nav { position: absolute; left: 0; top: 0; bottom: 0; width: 100px; background-color: $bg;
+            ul { padding-top: 6px; }
+            li { height: 24px; line-height: 24px; margin: 3px 0; cursor: pointer; padding-left: 20px;
+                &:hover { color: $blue; }
+            }
+        }
+        // 右侧内容
+        .art-cal-main-cont { position: relative; margin-left: 100px;
+            // 没有左侧快捷导航
+            &.no-left-nav { margin-left: 0; }
+            .art-cal-cont-box { font-size: 0; }
+            // 单个日期容器
+            .art-cal-single-box { float: left; display: block; width: 210px; position: relative; font-size: 12px; padding: 9px 14px; box-sizing: border-box; }
+            // 右侧月份标题
+            .art-cal-title-box { position: relative; height: 42px; line-height: 42px; border-bottom: 1px solid $borderColor; text-align: center; color: $mainStrong; font-size: 0; box-sizing: border-box;
+                span { display: inline-block; width: 210px; font-size: 12px; }
+                a { position: absolute; z-index: 10; top: 0; bottom: 0; margin: auto 0; width: 12px; height: 20px; background-repeat: no-repeat; background-position: center center; }
+                .art-cal-prev-year { left: 18px; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/calendar/d-arr.png); }
+                .art-cal-prev-month { left: 32px; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/calendar/s-arr.png); }
+                .art-cal-next-month { right: 32px; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/calendar/s-arr.png); transform: rotate(180deg); }
+                .art-cal-next-year { right: 18px; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/calendar/d-arr.png); transform: rotate(180deg); }
+            }
+            // 星期标题
+            .art-cal-week, .art-cal-days { line-height: 24px; text-align: center;
+                ul { font-size: 0; margin: 0 auto; }
+                li { float: left; font-size: 12px; width: 22px;line-height: 24px; margin: 2px 2px; display: inline-block; border-radius: $borderRadius; }
+            }
+            .art-cal-week {
+                li { margin: 0 2px; }
+            }
+            // 日期
+            .art-cal-days {
+                li { position: relative; cursor: pointer;
+                    // 不是当前月份的样式
+                    &.dark { color: $mainWeak;
+                        &:hover { background-color: transparent; }
+                    }
+                    // 悬浮
+                    &:hover { background-color: rgba($blue, .1); }
+                    // 当天
+                    &.cur {
+                        &:after { content: ""; position: absolute; right: 0; top: 0; width: 5px; height: 5px; border-radius: 100px; background-color: $blue; }
+                    }
+                    // 选中状态
+                    &.active { color: #fff; background-color: $blue;
+                        &.end {
+                            &:before { content: ""; position: absolute; left: -4px; width: 4px; top: 0; bottom: 0; background-color: #fff; }
+                        }
+                        &.cur {
+                            &:after { background-color: #fff; }
+                        }
+                    }
+                    // 范围
+                    &.sel { background: none;
+                        &:before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; right: -4px; background-color: rgba($blue, .1); }
+                    }
+                    // 不可选
+                    &.dis { color: $mainWeak; background-color: $bg; cursor: not-allowed;
+                        &:before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; right: -4px; background-color: $bg; z-index: -1; }
+                        &:hover { background-color: $bg; }
+                    }
+                }
+            }
+        }
+    }
+}

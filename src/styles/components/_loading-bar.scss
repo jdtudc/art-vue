@@ -1,0 +1,12 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../animation/_loading-bar.scss";
+/**================================================================
+
+=================================================================*/
+.art-loading-bar { position: fixed; left: 0; top: 0; right: 0; height: 2px; z-index: 9999; overflow: hidden;
+    &-inner { height: 100%; transition: all $animateTime linear; width: 0;
+        &_success { background-color: $blue;}
+        &_fail { background-color: $red;}
+    }
+}

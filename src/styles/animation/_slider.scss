@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+// slider-fade
+.slider-fade-enter-active, .slider-fade-leave-active {
+  transition: opacity $animateTime;
+}
+.slider-fade-enter, .slider-fade-leave-active {
+  opacity: 0
+}

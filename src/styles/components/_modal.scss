@@ -1,0 +1,59 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+@import "../animation/_modal.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+@mixin mm {
+    display: -webkit-box;
+    -webkit-box-pack:center;
+    box-pack: center;
+    -webkit-box-align: center;
+    box-align: center;
+}
+.art-modal { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 9999; overflow: hidden; @include mm();
+    .art-modal-wrap { position: relative; background-color: $white; border-radius: $borderRadius;
+        .art-modal-header { position: relative; padding: 15px 55px 15px 20px; box-shadow: 0 2px 8px 0 rgba(#000, .05);
+            .art-modal-title { font-size: $sizeMedium; color: $mainStrong; line-height: 1; white-space: nowrap;
+                span { font-size: $sizeSmall; color: $main; margin-left: 5px;}
+            }
+            .art-modal-header-btn { position: absolute; right: 0; top: 0; padding: 15px 20px;
+                .header-btn { display: block; width: 15px; height: 15px; background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/modal/close.png") no-repeat center center; background-size: 15px 15px; cursor: pointer; }
+            }
+        }
+        .art-modal-footer { border-top: 1px solid $borderColor; padding: 19px 40px 20px;
+            .art-modal-btn {
+                button { float: right; margin-right: 10px;
+                    &:first-child { margin-right: 0; }
+                }
+            }
+        }
+        .art-modal-result { padding: 40px; width: 360px; box-sizing: content-box;
+            .art-modal-result-content { position: relative; padding-left: 50px; padding-right: 85px;
+                .art-modal-result-icon { position: absolute; left: 0; top: 0; width: 32px; height: 32px; display: block; background-size: 32px 32px;
+                    &.art-modal-result-icon_success { background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/modal/success.png") no-repeat center center; }
+                    &.art-modal-result-icon_warning { background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/modal/warning.png") no-repeat center center; }
+                    &.art-modal-result-icon_error { background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/modal/error.png") no-repeat center center; }
+                }
+                .art-modal-result-title { font-size: $sizeLarge; color: $mainStrong; line-height: 32px; word-break: break-all;}
+                .art-modal-result-desc { font-size: $sizeNormal; color: $main; line-height: 26px; padding-top: 8px;
+                    a { color: $blue; text-decoration: none; }
+                }
+            }
+            .art-modal-result-btn { margin-top: 24px;
+                .art-modal-btn {
+                    button { float: right; margin-right: 10px;
+                        &:first-child { margin-right: 0; }
+                    }
+                }
+            }
+        }
+    }
+}
+.art-modal.ie {
+    .art-modal-wrap-box { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+}

@@ -1,0 +1,35 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+@import "../animation/_slider.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-slider { position: relative; box-sizing: border-box;
+    &-inner { position: relative; width: 100%; height: 20px; padding: 7px 0;
+        &:before { content: ""; position: absolute; left: 0; top: 50%; margin-top: -3px; width: 100%; height: 6px; background-color: $borderColor; border-radius: 6px; z-index: -1;}
+    }
+    &-track { height: 100%; background-image: linear-gradient(-90deg, #6baeff 0%, $blue 100%); border-radius: 6px; box-shadow: 0 2px 6px 0 rgba($blue,0.3);}
+    &-handler { position: absolute; left: 0; top: 50%; margin-top: -10px; margin-left: -10px; width: 20px; height: 20px; border: 1px solid $darkBg; background-color: $white; box-shadow: 0 2px 4px 0 $borderColor; border-radius: 50%; cursor: pointer;}
+    &-tooltip { position: absolute; left: 50%; bottom: 26px; padding: 7px 10px; text-align: center; color: $white; font-size: $sizeSmall; line-height: 1; background-color: rgba($blue, 0.8); transform: translate(-50%, 0); transition: all $animateTime; white-space: nowrap;
+        &:after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -4px; display: block; width: 0; height: 0; border: 4px solid transparent; border-top-color: rgba($blue, 0.8); border-bottom-width: 0; border-radius: $borderRadius; transition: all $animateTime;}
+    }
+    &-info { position: relative; font-size: 0;}
+    &-value { display: inline-block; font-size: $sizeSmall; line-height: 14px; color: $mainWeak; width: 50%;
+        &:first-child { text-align: left;}
+        &:last-child { text-align: right;}
+    }
+}
+.art-slider_confined {
+    .art-slider-track { background-image: linear-gradient(-90deg, #f48eaf 0%, $red 100%); box-shadow: 0 2px 6px 0 rgba($red,0.3);}
+    .art-slider-tooltip { background-color: rgba($main, 0.8);
+        &:after { border-top-color: rgba($main, 0.8);}
+    }
+}
+.art-slider_disabled {
+    .art-slider-track { opacity: 0.3;}
+    .art-slider-handler { cursor: not-allowed;}
+}

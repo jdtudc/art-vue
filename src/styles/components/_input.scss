@@ -1,0 +1,111 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+$inputPrefix: "#{$proPrefix}input";
+/**============================
+ art : 项目前缀
+ art-input ： 组件前缀
+ art-input-icon ：组件内部元素
+ art-input_large：组件本身的不同状体
+==============================*/
+.#{$inputPrefix} { position: relative; display: inline-block; width: 166px; vertical-align: middle; font-size: 0; line-height: 1.5;
+    //size : large
+    &.#{$inputPrefix}_large {
+        .#{$inputPrefix}-original { height: 40px; padding: 11px 15px; }
+        .#{$inputPrefix}-icon { height: 40px; }
+        .#{$inputPrefix}-clear { height: 26px;}
+    }
+    //small
+    &.#{$inputPrefix}_small {
+        .#{$inputPrefix}-original { font-size: 12px; height: 26px; padding: 5px 10px; }
+        .#{$inputPrefix}-icon { height: 26px; }
+    }
+    // 无边框
+    &.#{$inputPrefix}_noborder {
+        .#{$inputPrefix}-original { border-color: #fff; box-shadow: none;
+            // placeholder颜色
+            &:hover::-webkit-input-placeholder { color: $mainStrong; }
+            &:hover:-moz-placeholder { color: $mainStrong; }
+            &:hover::-moz-placeholder { color: $mainStrong; }
+            &:hover:-ms-input-placeholder { color: $mainStrong; }
+        }
+    }
+    // 带单位
+    &.#{$inputPrefix}_unit {
+        .#{$inputPrefix}-unit { display: inline-block; }
+        i.#{$inputPrefix}-icon { display: none; }
+    }
+    // block 模式
+    &.#{$inputPrefix}_block { display: block; width: auto; }
+
+    // status  禁用、报错、成功
+    &.#{$inputPrefix}_disabled {
+        .#{$inputPrefix}-original { cursor: not-allowed; border-color: $borderColor; box-shadow: none; background-color: $bg; }
+    }
+    &.#{$inputPrefix}_error {
+        .#{$inputPrefix}-error-text { display: block; }
+        .#{$inputPrefix}-original { border-color: $red; box-shadow: 1px 0 6px rgba($red, .3); }
+        //.#{$inputPrefix}-icon { background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/input/error.png); }
+        .#{$inputPrefix}-icon-err {margin: 3px 0;}
+        //size : large
+        &.#{$inputPrefix}_large {
+            .#{$inputPrefix}-icon-err {margin: 7px 0;}
+        }
+        //small
+        &.#{$inputPrefix}_small {
+            .#{$inputPrefix}-icon-err {margin: 0;}
+        }
+    }
+    &.#{$inputPrefix}_error-right {
+        .#{$inputPrefix}-error-text { position: absolute; top: 50%; transform: translate(0, -50%); margin: 0 0 0 10px; left: 100%; width: 100%; line-height: 1.2;}
+    }
+    &.#{$inputPrefix}_success {
+        .#{$inputPrefix}-icon { background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/input/success.png); }
+    }
+    &.#{$inputPrefix}_search {
+        .#{$inputPrefix}-icon { background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/input/search.png); }
+    }
+
+    // 有图标的状态：左侧或右侧
+    &.#{$inputPrefix}_icon-left, &.#{$inputPrefix}_icon-right {
+        .#{$inputPrefix}-icon { display: block; }
+    }
+    &.#{$inputPrefix}_icon-left {
+        .#{$inputPrefix}-icon { left: 0; right: auto; }
+        .#{$inputPrefix}-original { padding-left: 25px; }
+    }
+    &.#{$inputPrefix}_icon-right {
+        .#{$inputPrefix}-original { padding-right: 25px; }
+    }
+    // 内置的图标类型
+    /*    &.#{$inputPrefix}_icon-success {
+            .#{$inputPrefix}-icon { background-image: url(../../images/input/success.png); }
+        }
+        &.#{$inputPrefix}_icon-error {
+            .#{$inputPrefix}-icon { background-image: url(../../images/input/error.png); }
+        }
+        &.#{$inputPrefix}_icon-search {
+            .#{$inputPrefix}-icon { background-image: url(../../images/input/search.png); }
+        }*/
+    /**============================
+    子元素
+    ==============================*/
+    .#{$inputPrefix}-icon, .#{$inputPrefix}-icon-err { display: none; position: absolute; right: 0; top: 0; bottom: 0; margin: auto 0; width: 25px; height: 26px; background-repeat: no-repeat; background-position: center center; pointer-events: none;}
+    .#{$inputPrefix}-icon-err {display: block; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/input/error.png); }
+    // 清除按钮
+    .#{$inputPrefix}-clear { position: absolute; right: 0; top: 0; margin: auto 0; width: 25px; height: 32px; background-repeat: no-repeat; background-position: center center; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/input/clear.png); cursor: pointer; }
+    // 单位
+    .#{$inputPrefix}-unit { display: none; font-size: 14px; color: $mainWeak; position: absolute; right: 0; top: 0; margin: auto 0; padding: 0 9px; height: 32px; line-height: 32px; }
+    // 错误文案
+    .#{$inputPrefix}-error-text { display: none; color: $red; font-size: 12px; margin-top: 6px;}
+}
+// 原始控件
+.#{$inputPrefix}-original { display: block; line-height: 1; height: 32px; width: 100%; padding: 7px 10px; color: $mainStrong; font-size: 14px; background-color: #fff; border: 1px solid $borderColor; border-radius: $borderRadius; transition: all $animateTime; outline: none; box-sizing: border-box;
+    // placeholder颜色
+    &::-webkit-input-placeholder { color: $mainWeak; transition: all $animateTime; }
+    &:-moz-placeholder { color: $mainWeak; transition: all $animateTime; }
+    &::-moz-placeholder { color: $mainWeak; transition: all $animateTime; }
+    &:-ms-input-placeholder { color: $mainWeak; transition: all $animateTime; }
+    //
+    &:focus, &:hover { border-color: $blue; box-shadow: 1px 0 6px rgba($blue, .3); }
+}
+

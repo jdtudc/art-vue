@@ -1,0 +1,11 @@
+@charset "utf-8";
+/**================================================================
+
+=================================================================*/
+.art-table { font-size: 12px; text-align: left;
+    table { width: 100%; }
+    th { color: $mainWeak; background: $bg; font-weight: normal; }
+    td { color: $main; border-bottom: 1px solid $borderColor; }
+    th, td { padding-left: 30px;line-height: 1.5; padding-top: 12px; padding-bottom: 12px;}
+    tr:hover td { color: $mainStrong; }
+}

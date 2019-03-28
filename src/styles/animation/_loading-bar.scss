@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+// loading-fade
+.loading-fade-enter-active, .loading-fade-leave-active {
+    transition: all 0.3s ease-in-out;
+}
+.loading-fade-enter, .loading-fade-leave-active {
+    opacity: 0;
+}

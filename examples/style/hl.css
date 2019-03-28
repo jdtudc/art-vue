@@ -1,0 +1,151 @@
+/*
+One special theme for jrTech by McChen<chenjiahao@jd.com>
+
+base:    #ffffff
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+.hljs, .language-html, .language-Html {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    color: #727682;
+    padding: 15px;
+    -webkit-text-size-adjust: none;
+    background: transparent;
+}
+
+.hljs-doctype {
+    color: #999
+}
+
+.hljs-tag {
+    color: #0074ff
+}
+
+.hljs-attr {
+    color: #f52f3e
+}
+
+.hljs-value {
+    color: #42b983
+}
+
+.hljs-keyword {
+    color: #f52f3e
+}
+
+.hljs-string {
+    color: #0bdba8
+}
+
+.hljs-comment {
+    color: #b3b3b3
+}
+
+.hljs-operator .hljs-comment {
+    color: #525252
+}
+
+.hljs-regexp {
+    color: #af7dff
+}
+
+.hljs-built_in {
+    color: #2db7f5
+}
+
+.css .hljs-class, .javascript .hljs-class {
+    color: #e96900
+}
+
+.css .hljs-number,.javascript .hljs-number {
+    color: #fc1e70
+}
+
+.css .hljs-attr, .javascript .hljs-attr {
+    color: #af7dff
+}
+
+.css .hljs-important, .javascript .hljs-important {
+    color: red
+}
+
+.javascript .hljs-string {
+    color: #727682;
+}
+
+.actionscript .hljs-literal, .javascript .hljs-literal {
+    color: #fc1e70
+}
+
+
+/*================
+default
+=================*/
+/*.hljs {*/
+    /*display: block;*/
+    /*overflow-x: auto;*/
+    /*padding: 0.5em;*/
+    /*color: #727682;*/
+    /*background: #F0F0F0*/
+/*}*/
+
+/*.hljs, .hljs-subst {*/
+    /*color: #444*/
+/*}*/
+
+/*.hljs-comment {*/
+    /*color: #888888*/
+/*}*/
+
+/*.hljs-keyword, .hljs-attr, .hljs-selector-tag, .hljs-meta-keyword, .hljs-doctag, .hljs-name {*/
+    /*font-weight: bold*/
+/*}*/
+
+/*.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {*/
+    /*color: #880000*/
+/*}*/
+
+/*.hljs-title, .hljs-section {*/
+    /*color: #880000;*/
+    /*font-weight: bold*/
+/*}*/
+
+/*.hljs-regexp, .hljs-symbol, .hljs-variable, .hljs-template-variable, .hljs-link, .hljs-selector-attr, .hljs-selector-pseudo {*/
+    /*color: #BC6060*/
+/*}*/
+
+/*.hljs-literal {*/
+    /*color: #78A960*/
+/*}*/
+
+/*.hljs-built_in, .hljs-bullet, .hljs-code, .hljs-addition {*/
+    /*color: #397300*/
+/*}*/
+
+/*.hljs-meta {*/
+    /*color: #1f7199*/
+/*}*/
+
+/*.hljs-meta-string {*/
+    /*color: #4d99bf*/
+/*}*/
+
+/*.hljs-emphasis {*/
+    /*font-style: italic*/
+/*}*/
+
+/*.hljs-strong {*/
+    /*font-weight: bold*/
+/*}*/

@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-alert {
+    &-cont { position: relative; padding-left: 40px; padding-right: 85px;}
+    &-icon { position: absolute; left: 0; top: 0; width: 32px; height: 32px; display: block; background-size: 32px 32px;
+        &_success { background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/modal/success.png") no-repeat center center; }
+        &_warning { background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/modal/warning.png") no-repeat center center; }
+        &_error { background: url("//storage.360buyimg.com/static-res/tech/jrv/1.0.0/modal/error.png") no-repeat center center; }
+    }
+    &-title { font-size: $sizeLarge; color: $mainStrong; line-height: 32px; word-break: break-all;}
+    &-desc { font-size: $sizeNormal; color: $main; line-height: 26px; padding-top: 8px;
+        a { color: $blue; text-decoration: none; }
+    }
+}

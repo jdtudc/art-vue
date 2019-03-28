@@ -1,0 +1,14 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-badge { position: relative; display: inline-block; line-height: 1; vertical-align: middle; height: 16px; font-size: 0; border-radius: 8px; background: $green;
+    &_dot { position: absolute; top: -2px; right: 0; height: 4px; transform: translate(-50%, 0);}
+    &-dot { display: block; width: 4px; height: 4px; border-radius: $borderRadius;}
+    &-count { display: block; min-width: 16px; height: 16px; line-height: 16px; border-radius: 8px; font-size: $sizeSmall; color: $white; text-align: center; padding: 0 5px; white-space: nowrap; box-shadow: 0 2px 4px 0 rgba($mainStrong, 0.4);}
+}

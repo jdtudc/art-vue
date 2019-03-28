@@ -1,0 +1,54 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+/**================================================================
+
+=================================================================*/
+.art-btn-drop { display: inline-block; position: relative; line-height: 1; height: 26px; min-width: 56px; cursor: pointer;
+    /**============================
+    类型0 ：文字  主题：默认蓝色
+    ==============================*/
+    &:hover {
+        .art-btn-drop-box {visibility: visible;}
+    }
+    // 默认显示的文本
+    .art-btn-drop-main {position: relative;height: 26px; line-height: 26px; font-size: 12px;padding: 0 22px 0 10px; color: $blue; border-radius: 2px; white-space: nowrap;
+        &:before { content: ""; display: block; width: 5px; height: 5px; border: 1px solid rgba($blue, .98); border-width: 0 0 1px 1px; transform: rotate(-45deg); transition: all ease $animateTime;pointer-events: none; position: absolute;top: 9px; right: 10px;}
+    }
+    // 下拉列表
+    .art-btn-drop-box { position: absolute; z-index: 1010;right: 0; top: 0; visibility: hidden; box-shadow: 0 2px 14px 0 rgba(50, 60, 71, 0.15); border-radius: 2px;
+        li {height: 26px; line-height: 26px; font-size: 12px; white-space: nowrap; color: $main; text-align: right;padding: 0 22px 0 20px; background-color: #fff;
+            &:hover {color: #fff; background-color: $blue;}
+        }
+    }
+
+    /**============================
+    类型1：按钮   主题：默认蓝色
+    ==============================*/
+    &.art-btn-drop_btn {
+        .art-btn-drop-main {background-color: $blue; color: #fff; box-shadow: 0 3px 10px 0 rgba($blue, .3);
+            &:before {border-color: #fff;}
+        }
+    }
+    /**============================
+    主题：红色
+    ==============================*/
+    &.art-btn-drop_red {
+        // 类型0 ：文字  主题：默认蓝色
+        // 默认显示的文本
+        .art-btn-drop-main { color: $red;
+            &:before { border-color: rgba($red, .98);}
+        }
+        // 下拉列表
+        .art-btn-drop-box {
+            li {
+                &:hover {background-color: $red;}
+            }
+        }
+        // 类型1：按钮   主题：默认蓝色
+        &.art-btn-drop_btn {
+            .art-btn-drop-main {background-color: $red; color: #fff; box-shadow: 0 3px 10px 0 rgba($red, .3);
+                &:before {border-color: #fff;}
+            }
+        }
+    }
+}

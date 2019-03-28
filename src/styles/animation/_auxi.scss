@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+// animation
+// fade
+.fade-in-enter-active, .fade-in-leave-active {
+  transition: opacity $animateTime;
+}
+.fade-in-enter, .fade-in-leave-active {
+  opacity: 0
+}

@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+// fade
+.fade-scale-enter-active, .fade-scale-leave-active {
+  transition: all $animateTime;
+  transform: scaleY(1);
+}
+.fade-scale-enter, .fade-scale-leave-active {
+  opacity: 0;
+  transform: scaleY(0);
+}

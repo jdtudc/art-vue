@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+@import "../animation/_dropdown.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-dropdown { min-width: 100%; background-color: $white; box-shadow: 0 2px 14px 0 rgba(50,60,71, 0.15); box-sizing: border-box; overflow: hidden;
+  &_large {
+    .art-dropdown-item { padding: 0 25px; line-height: 40px; margin-top: 12px;}
+  }
+  &_middle {
+    .art-dropdown-item { padding: 0 15px; line-height: 32px; margin-top: 8px;}
+  }
+  &_small {
+    .art-dropdown-item { padding: 0 10px; line-height: 26px; margin-top: 4px;}
+  }
+  &_inherit { width: 100%;}
+  &-list { padding: 10px 0;}
+  &-item { color: $main; font-size: $sizeSmall; line-height: 32px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; background-color: $white; transition: all $animateTime; cursor: pointer;
+    &:first-child { margin-top: 0;}
+    &:hover, &:active { background-color: $bg;}
+    &_active { color: $blue;}
+    &_disabled { cursor: not-allowed; color: $mainWeak; background-color: $white;
+      &:hover, &:active { background-color: $white;}
+    }
+  }
+}

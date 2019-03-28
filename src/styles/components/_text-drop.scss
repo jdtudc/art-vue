@@ -1,0 +1,19 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+/**================================================================
+
+=================================================================*/
+.art-text-drop { display: block; position: relative; line-height: 1; font-size: 12px;
+    &:before {content: ""; width: 100%;height: 2px; top: 32px;position: absolute;z-index: 100; }
+    // 选择文案
+    &-result { display: block; position: relative; color: $mainStrong; font-size: $sizeSmall; line-height: 32px; cursor: pointer; padding-right: 27px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; min-width: 100%; box-sizing: border-box;
+        &:after { content: ""; position: absolute; top: 50%; margin-top: -4px; right: 10px; width: 4px; height: 8px; background-image: url(//storage.360buyimg.com/static-res/tech/jrv/1.0.0/calendar/s-arr.png); background-repeat: no-repeat; background-position: center center; transform: rotate(270deg); transition: all 0.2s;}
+        &_active {
+            &:after { transform: rotate(450deg);}
+        }
+    }
+    // 下拉框容器
+    &-box { position: absolute; left: 0; top: 34px; min-width: 100%; z-index: 1010; max-height: 200px;
+        &_inherit { width: 100%;}
+    }
+}

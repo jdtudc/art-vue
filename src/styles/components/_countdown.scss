@@ -1,0 +1,25 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-countdown { position: relative; width: 100%; height: 3px;
+    &-line { position: absolute; display: block; top: 50%; width: 100%; height: 3px; background-color: $borderColor; border-radius: $borderRadius;
+        &-inner { content: ""; display: block; position: absolute; right: 0; height: 100%; width: 100%; border-radius: $borderRadius; background-color: $blue; box-shadow: 0 2px 4px 0 rgba(213, 100, 100, 0.2); transition: all $animateTime ease-out;}
+    }
+    &-remain { position: absolute; top: 50%; margin-right: 11px; white-space: nowrap; transform: translate(0, -50%); transition: all $animateTime ease-out;
+        &-span {position: absolute;width: 14px; height: 100%;right: -14px; overflow: hidden;
+            &:after {content: "";position: absolute; bottom: 0; right: 0; width: 14px; height: 17.05px; background-color: $red; box-shadow: 0 2px 4px 0 rgba(245, 47, 62, 0.4); transform: rotate(-43deg); transform-origin: 0 100%; z-index: 9;}
+        }
+        &-content { position: relative; display: block; color: $white; font-size: $sizeSmall; padding-left: 10px; line-height: 22px; border-radius: 11px 0 0 11px; background-color: $red; box-shadow: 0 2px 4px 0 rgba(245, 47, 62, 0.4); box-sizing: border-box; z-index: 11;}
+    }
+    &_warn {
+        .art-countdown-line {
+            &-inner { background-color: $red; box-shadow: 0 2px 4px 0 rgba(245, 47, 62, 0.2);}
+        }
+    }
+}

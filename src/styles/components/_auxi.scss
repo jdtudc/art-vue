@@ -1,0 +1,24 @@
+@charset "utf-8";
+@import "../common/_var.scss";
+@import "../common/_base.scss";
+@import "../animation/_auxi.scss";
+/**============================
+ art : 项目前缀
+ art-xxx ： 组件前缀
+ art-xxx-xxx ：组件内部元素
+ art-xxx_xxx：组件本身的不同状状态
+==============================*/
+.art-auxi { position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  &-none { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); min-width: 82px; min-height: 114px;
+    i { display: block; width: 81px; height: 74px; margin: auto; background-image: url("//storage.360buyimg.com/static-res/tech/daplatform/chart-none.png"); }
+    p { color: $mainWeak; font-size: $sizeNormal; text-align: center; line-height: 1; margin-top: 25px;}
+  }
+  &-error { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    i { display: block; width: 53px; height: 70px; margin: auto; background-image: url("//storage.360buyimg.com/static-res/tech/daplatform/chart-error.png"); }
+    p { color: $mainWeak; font-size: $sizeNormal; text-align: center; line-height: 1; margin-top: 30px;
+      a { color: $blue;}
+    }
+  }
+  &-loading { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 124px; height: 12px; background: url("//storage.360buyimg.com/static-res/tech/daplatform/chart-loading.gif") no-repeat center center; background-size: 100%;}
+}
+

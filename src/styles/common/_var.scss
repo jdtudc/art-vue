@@ -1,0 +1,62 @@
+@charset "utf-8";
+/**================================================================
+变量
+=================================================================*/
+$base: 8px;
+// 字体
+$fontFamily: San Francisco, PingFang SC, Hiragino Sans GB, Segoe UI, Microsoft Yahei, 微软雅黑, Tahoma, Arial, sans-serif;
+// 背景
+$bg: #f6f8fc;
+// 强化背景
+$darkBg: #ecf0f9;
+// 弱化背景
+$weakBg: #fafbfd;
+// 分隔线、边框
+$borderColor: #f0f2f5;
+// 标题、强化
+$mainStrong: #283039;
+// 正文
+$main: #727682;
+//弱化/辅助文案
+$mainWeak: #bec1ca;
+// 辅助
+$remark: #bec1ca;
+// 投影
+$shadow: #ebedf2;
+// 蓝色
+$blue: #0074ff;
+$blueDark: #006def;
+$blueActive: #0064da;
+$blueDisabled: #9fcbff;
+// 灰蓝
+$grayBlue: #5b6688;
+// 绿色
+$green: #0bdba8;
+// 橙色
+$orange: #ffb540;
+// 红色
+$red: #f52f3e;
+$redDark: #de2b38;
+$redDisabled: #feadb3;
+// 白色
+$white: #fff;
+// 粉色
+$pink: #ff3f80;
+// 滚动条颜色
+$scroll: #c1c4cc;
+// border-radius
+$borderRadius: 2px;
+// 动画时间
+$animateTime: .2s;
+// 字体
+$sizeLarge: 18px;
+$sizeMedium: 16px;
+$sizeNormal: 14px;
+$sizeSmall: 12px;
+// border-radius
+$borderRadius: 2px;
+// 动画时间
+$animateTime: .2s;
+
+// 项目前缀
+$proPrefix: "art-";
