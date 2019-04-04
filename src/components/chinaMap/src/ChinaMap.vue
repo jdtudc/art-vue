@@ -323,22 +323,26 @@
 					self.draw();
 					return;
 				}
-				$.ajax({
-					url: self.url,
-					dataType: "json",
-					success: function (result) {
-						if (result.code === "000000") {
-							cityLocateData = result.data;
-							self.draw();
+				var xhr = new XMLHttpRequest()
+				xhr.onreadyStateChange = function () {
+					if (xhr.readystate === 4) {
+						if (xhr.status === 304 || (xhr.status >= 200 && xhr.status < 300)) {
+              const result = xhr.responseText
+              console.log(reslut);
+							if (result.code === "000000") {
+								cityLocateData = result.data;
+								self.draw();
+							} else {
+								console.error("数据获取失败");
+							}
 						} else {
-							console.error("数据获取失败");
+							console.log('type: error, errCode:', xhr.status)
 						}
-					},
-					error: function () {
-					},
-					complete: function () {
 					}
-				});
+				}
+				xhr.open('get', self.url, true)
+				xhr.setRequestHeader('Content-Type', 'application/json')
+				xhr.send(null)
 			},
 
 			// 城市地图中覆盖边框

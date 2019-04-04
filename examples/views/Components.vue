@@ -101,6 +101,14 @@
 			}
 		},
 		mounted() {
+			const to = this.$route
+			this.curNav = to.name;
+			document.title = to.name + ' - FIN DESIGN';
+			this.navData.forEach((item) => {
+				if (item.name === this.curNav) {
+					this.endnote = item.endnote;
+				}
+			});
 			let timer = setTimeout(() => {
 				let sTop = document.documentElement.scrollTop || document.body.scrollTop;
 				let pageH = document.body.clientHeight;
