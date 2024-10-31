@@ -14,7 +14,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "echarts": "^3.8.5",
-    "vue": "^2.5.2",
+    "vue": "^3.0.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
